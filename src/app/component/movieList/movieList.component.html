@@ -1,0 +1,16 @@
+<app-header [theme]="theme" ></app-header>
+  <label  (change)="changeTheme()" class="switch">
+  <input type="checkbox" >
+  <span class="slider round"></span>
+</label>
+<app-genre-badge id="tags" ></app-genre-badge>
+<div class="main {{theme}}">
+  <app-movie-list-card *ngFor="let film of films" [film]="film" [theme]="theme"></app-movie-list-card>
+</div>
+
+<div class="pagination">
+  <div class="page" id="prev" (click)="prev()">Previous page</div>
+  <div class="current" id="current">{{NumberPage}}</div>
+  <div class="page" id="next" (click)="next()">Next page</div>
+</div>
+<!--<router-outlet></router-outlet>-->
